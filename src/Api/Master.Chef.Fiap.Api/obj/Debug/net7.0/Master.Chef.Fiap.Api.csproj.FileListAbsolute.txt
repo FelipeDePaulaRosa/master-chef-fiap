@@ -6,6 +6,7 @@ D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\De
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\Debug\net7.0\Master.Chef.Fiap.Api.dll
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\Debug\net7.0\Master.Chef.Fiap.Api.pdb
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\Debug\net7.0\Microsoft.OpenApi.dll
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -39,4 +40,3 @@ D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\obj\De
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\obj\Debug\net7.0\Master.Chef.Fiap.Api.pdb
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\obj\Debug\net7.0\Master.Chef.Fiap.Api.genruntimeconfig.cache
 D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\obj\Debug\net7.0\ref\Master.Chef.Fiap.Api.dll
-D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Api\Master.Chef.Fiap.Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
