@@ -8,7 +8,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Infrastructure\Master.Chef.Fiap.CrossCutting\Master.Chef.Fiap.CrossCutting.csproj" />
-      <ProjectReference Include="..\Master.Chef.Fiap.CrossCutting\Master.Chef.Fiap.CrossCutting.csproj" />
     </ItemGroup>
 
 </Project>

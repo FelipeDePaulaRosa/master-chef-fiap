@@ -10,8 +10,6 @@
       <ProjectReference Include="..\..\Domain\Master.Chef.Fiap.Domain\Master.Chef.Fiap.Domain.csproj" />
       <ProjectReference Include="..\..\Infrastructure\Master.Chef.Fiap.CrossCutting\Master.Chef.Fiap.CrossCutting.csproj" />
       <ProjectReference Include="..\..\Infrastructure\Master.Chef.Fiap.Infrastructure\Master.Chef.Fiap.Infrastructure.csproj" />
-      <ProjectReference Include="..\..\Master.Chef.Fiap.Domain\Master.Chef.Fiap.Domain.csproj" />
-      <ProjectReference Include="..\..\Master.Chef.Fiap.Infrastructure\Master.Chef.Fiap.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
