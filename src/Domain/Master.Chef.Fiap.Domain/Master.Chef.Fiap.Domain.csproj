@@ -10,4 +10,8 @@
       <ProjectReference Include="..\..\Infrastructure\Master.Chef.Fiap.CrossCutting\Master.Chef.Fiap.CrossCutting.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Models\" />
+    </ItemGroup>
+
 </Project>
