@@ -6,14 +6,11 @@ namespace Master.Chef.Fiap.Application.Services;
 public class IdentityService : IIdentityService
 {
     private readonly UserManager<IdentityUser> _userManager;
-    private readonly SignInManager<IdentityUser> _signInManager;
     
-    public IdentityService(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+    public IdentityService(UserManager<IdentityUser> userManager)
     {
         _userManager = userManager;
-        _signInManager = signInManager;
     }
-
 
     public async Task<RegisterUserResponseDto> Register(RegisterUserDto dto)
     {
