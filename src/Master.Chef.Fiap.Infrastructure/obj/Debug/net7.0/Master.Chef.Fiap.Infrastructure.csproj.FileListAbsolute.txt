@@ -1,0 +1,17 @@
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\bin\Debug\net7.0\Master.Chef.Fiap.Infrastructure.deps.json
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\bin\Debug\net7.0\Master.Chef.Fiap.Infrastructure.dll
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\bin\Debug\net7.0\Master.Chef.Fiap.Infrastructure.pdb
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\bin\Debug\net7.0\Master.Chef.Fiap.CrossCutting.dll
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\bin\Debug\net7.0\Master.Chef.Fiap.Domain.dll
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\bin\Debug\net7.0\Master.Chef.Fiap.CrossCutting.pdb
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\bin\Debug\net7.0\Master.Chef.Fiap.Domain.pdb
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\Master.Chef.Fiap.Infrastructure.csproj.AssemblyReference.cache
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\Master.Chef.Fiap.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\Master.Chef.Fiap.Infrastructure.AssemblyInfoInputs.cache
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\Master.Chef.Fiap.Infrastructure.AssemblyInfo.cs
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\Master.Chef.Fiap.Infrastructure.csproj.CoreCompileInputs.cache
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\Master.Chef.Fiap.Infrastructure.csproj.CopyComplete
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\Master.Chef.Fiap.Infrastructure.dll
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\refint\Master.Chef.Fiap.Infrastructure.dll
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\Master.Chef.Fiap.Infrastructure.pdb
+D:\FIAP\Desenvolvimento Web\master-chef-fiap\src\Master.Chef.Fiap.Infrastructure\obj\Debug\net7.0\ref\Master.Chef.Fiap.Infrastructure.dll

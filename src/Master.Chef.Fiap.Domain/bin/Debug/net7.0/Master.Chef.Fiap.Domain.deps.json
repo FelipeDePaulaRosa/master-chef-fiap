@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Master.Chef.Fiap.Domain/1.0.0": {
+        "dependencies": {
+          "Master.Chef.Fiap.CrossCutting": "1.0.0"
+        },
+        "runtime": {
+          "Master.Chef.Fiap.Domain.dll": {}
+        }
+      },
+      "Master.Chef.Fiap.CrossCutting/1.0.0": {
+        "runtime": {
+          "Master.Chef.Fiap.CrossCutting.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Master.Chef.Fiap.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Master.Chef.Fiap.CrossCutting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

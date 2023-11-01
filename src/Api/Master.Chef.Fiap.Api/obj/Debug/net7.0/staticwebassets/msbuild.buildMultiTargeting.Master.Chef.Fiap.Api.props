@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Master.Chef.Fiap.Api.props" />
+</Project>

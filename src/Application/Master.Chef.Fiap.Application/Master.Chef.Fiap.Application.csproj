@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Master.Chef.Fiap.Domain\Master.Chef.Fiap.Domain.csproj" />
+      <ProjectReference Include="..\..\Master.Chef.Fiap.Infrastructure\Master.Chef.Fiap.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>
