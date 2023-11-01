@@ -1,4 +1,4 @@
-﻿namespace Master.Chef.Fiap.Application.Dtos;
+﻿namespace Master.Chef.Fiap.Application.Dtos.Recipes;
 
 public class GetAllRecipesDto
 {

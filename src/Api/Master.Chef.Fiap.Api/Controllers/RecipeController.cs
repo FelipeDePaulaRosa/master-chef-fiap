@@ -1,5 +1,5 @@
 ﻿using Master.Chef.Fiap.Application.AppServices;
-using Master.Chef.Fiap.Application.Dtos;
+using Master.Chef.Fiap.Application.Dtos.Recipes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Master.Chef.Fiap.Api.Controllers;
