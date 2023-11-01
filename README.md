@@ -1,6 +1,6 @@
 # Master Chef Fiap
 
-This is a web application built using .NET 7 and Razor Pages.
+This is a web application built using .NET 7.
 
 ### Requirements
 
@@ -14,3 +14,4 @@ This is a web application built using .NET 7 and Razor Pages.
 dotnet build
 dotnet run
 ```
+In your browser, go to http://localhost:5036/swagger/index.html to access the API documentation.
