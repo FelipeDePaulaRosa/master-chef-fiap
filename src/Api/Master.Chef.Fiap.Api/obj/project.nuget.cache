@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "HUmTa7SkCLxMpfvygrXyxI0Nj/GoXtCBN3AaFvlQpBXtAQk+EQHZxjcux8ExIsmItIHFbqEmtcLLv8SIIJxNLw==",
+  "dgSpecHash": "L6gVIjZI/tp6/pLMC+3dk5tApBV3hKPS1sRgWqyukTM2Txi7h+VLii9ujM6Ff5gqmS+/Cn/xEeweFn2Ll9CnNg==",
   "success": true,
   "projectFilePath": "D:\\FIAP\\Desenvolvimento Web\\master-chef-fiap\\src\\Api\\Master.Chef.Fiap.Api\\Master.Chef.Fiap.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.12\\microsoft.aspnetcore.openapi.7.0.12.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-rc.2.23479.6\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\Felipe\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
