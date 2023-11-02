@@ -27,7 +27,16 @@ public class IdentityService : IIdentityService
             return new RegisterUserResponseDto(result.Errors.Select(e => e.Description));
             
         await _userManager.SetLockoutEnabledAsync(identityUser, false);
-        
         return new RegisterUserResponseDto();
+    }
+    
+    public async Task<IdentityUser> GetIdentityUserByEmail(string email)
+    {
+        var user = await _userManager.FindByEmailAsync(email);
+        
+        if(user == null)
+            throw new Exception("Usuário não encontrado.");
+        
+        return user;
     }
 }
