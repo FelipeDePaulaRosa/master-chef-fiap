@@ -21,11 +21,4 @@ public class AuthController : MainController
         var result = await _appService.Authenticate(dto);
         return Ok(result);
     }
-
-    [HttpPost("refresh-token")]
-    [Authorize]
-    public ActionResult Test()
-    {
-        return Ok();
-    }
 }
