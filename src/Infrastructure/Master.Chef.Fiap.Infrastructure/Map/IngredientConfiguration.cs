@@ -1,5 +1,5 @@
-﻿using Master.Chef.Fiap.Domain.Entities.Recipes;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Master.Chef.Fiap.Domain.Entities.Recipes;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Master.Chef.Fiap.Infrastructure.Map;

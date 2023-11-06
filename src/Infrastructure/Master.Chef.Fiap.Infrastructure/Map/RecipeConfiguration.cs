@@ -24,7 +24,7 @@ public class RecipeConfiguration : IEntityTypeConfiguration<Recipe>
         builder
             .Property(x => x.Description)
             .IsRequired()
-            .HasMaxLength(500)
+            .HasMaxLength(1000)
             .HasColumnName("description");
         
         builder

@@ -10,8 +10,7 @@ public class MasterChefApiDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.HasDefaultSchema("master_chef");
-        
+        modelBuilder.HasDefaultSchema("recipe");
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(MasterChefApiDbContext).Assembly);
     }
 }

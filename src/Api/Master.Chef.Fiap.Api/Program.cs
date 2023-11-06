@@ -9,6 +9,9 @@ using Master.Chef.Fiap.Application.Services.Auths;
 using Master.Chef.Fiap.Application.AppServices.Auths;
 using Master.Chef.Fiap.Application.AppServices.Identities;
 using Master.Chef.Fiap.CrossCutting.Configurations;
+using Master.Chef.Fiap.Domain.Entities.Recipes;
+using Master.Chef.Fiap.Infrastructure.Repositories;
+using Master.Chef.Fiap.Infrastructure.Repositories.Contracts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -84,7 +87,10 @@ builder.Services.AddAuthentication(opts =>
 builder.Services.AddControllers();
 
 #region Dependency Injection
+builder.Services.AddTransient<MasterChefApiDbContext>();
+
 builder.Services.AddScoped<IIdentityService, IdentityService>();
+builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
 builder.Services.AddScoped<IRecipeAppService, RecipeAppService>();
 builder.Services.AddScoped<IIdentityAppService, IdentityAppService>();
 
