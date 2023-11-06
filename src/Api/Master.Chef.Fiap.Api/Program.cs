@@ -88,6 +88,7 @@ builder.Services.AddControllers();
 
 #region Dependency Injection
 builder.Services.AddTransient<MasterChefApiDbContext>();
+builder.Services.AddSingleton<IUserSession, UserSession>();
 
 builder.Services.AddScoped<IIdentityService, IdentityService>();
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();

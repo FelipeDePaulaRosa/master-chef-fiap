@@ -14,4 +14,5 @@ public interface IRepository<TEntity> : IDisposable where TEntity : AggregateRoo
     Task Delete(TEntity entity, bool saveChanges = true);
     Task DeleteRange(List<TEntity> entities, bool saveChanges = true);
     Task<int> SaveChanges();
+    IQueryable<TEntityQuery> GetQueryable<TEntityQuery>() where TEntityQuery : Entity;
 }

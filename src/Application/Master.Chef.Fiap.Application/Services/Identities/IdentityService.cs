@@ -16,7 +16,7 @@ public class IdentityService : IIdentityService
     {
         var identityUser = new IdentityUser
         {
-            UserName = dto.Email,
+            UserName = dto.UserName,
             Email = dto.Email,
             EmailConfirmed = true
         };

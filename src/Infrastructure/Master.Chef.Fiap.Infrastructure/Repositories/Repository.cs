@@ -1,4 +1,5 @@
 ﻿using Master.Chef.Fiap.Domain.Contracts;
+using Master.Chef.Fiap.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Master.Chef.Fiap.Infrastructure.Contexts;
 using Master.Chef.Fiap.Infrastructure.Repositories.Contracts;
@@ -80,5 +81,10 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : Aggregat
     public async Task<int> SaveChanges()
     {
         return await _context.SaveChangesAsync();
+    }
+    
+    public IQueryable<TEntityQuery> GetQueryable<TEntityQuery>() where TEntityQuery : Entity
+    {
+        return _context.Set<TEntityQuery>();
     }
 }

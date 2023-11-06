@@ -19,12 +19,22 @@ public class Recipe : AggregateRoot
         string title,
         string description,
         DifficultyLevelEnum difficultLevelEnum,
-        ICollection<Ingredient> ingredients)
+        IEnumerable<Ingredient> ingredients)
     {
         OwnerId = ownerId;
         Title = title;
         Description = description;
         DifficultLevelEnum = new DifficultyLevel(difficultLevelEnum);
-        Ingredients = ingredients;
+        Ingredients = ingredients.ToList();
+    }
+    
+    public string GetDifficultLevelDescription()
+    {
+        return DifficultLevelEnum.GetDescription();
+    }
+
+    public short GetDifficultLevelId()
+    {
+        return (short) DifficultLevelEnum.Level;
     }
 }
