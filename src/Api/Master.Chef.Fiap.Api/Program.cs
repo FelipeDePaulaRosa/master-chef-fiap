@@ -21,6 +21,11 @@ IConfiguration configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.Development.json")
     .Build();
 
+builder.Services.AddDbContext<MasterChefApiDbContext>(options =>
+{
+    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+});
+
 #region Identity Configuration
 
 builder.Services.AddDbContext<MasterChefIdentityDbContext>(options =>

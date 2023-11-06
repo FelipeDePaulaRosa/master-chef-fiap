@@ -4,10 +4,27 @@ namespace Master.Chef.Fiap.Domain.Entities.Recipes;
 
 public class Recipe : Entity, IAggregateRoot
 {
-    public Guid IdOwner { get; set; }
+    public Guid OwnerId { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
-    public DifficultyLevel DificultLevel { get; set; }
-    public IEnumerable<string> Ingredients { get; set; }
-    
+    public DifficultyLevel DifficultLevelEnum { get; set; }
+    public IEnumerable<Ingredient> Ingredients { get; set; }
+
+    private Recipe()
+    {
+    }
+
+    public Recipe(
+        Guid ownerId,
+        string title,
+        string description,
+        DifficultyLevelEnum difficultLevelEnum,
+        IEnumerable<Ingredient> ingredients)
+    {
+        OwnerId = ownerId;
+        Title = title;
+        Description = description;
+        DifficultLevelEnum = new DifficultyLevel(difficultLevelEnum);
+        Ingredients = ingredients;
+    }
 }

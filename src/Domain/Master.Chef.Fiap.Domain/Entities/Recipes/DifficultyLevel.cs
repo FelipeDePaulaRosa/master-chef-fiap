@@ -2,9 +2,9 @@
 
 public class DifficultyLevel : ValueObject
 {
-    public DificultyLevelEnum Level { get; private set; }
+    public DifficultyLevelEnum Level { get; private set; }
 
-    public DifficultyLevel(DificultyLevelEnum level)
+    public DifficultyLevel(DifficultyLevelEnum level)
     {
         Level = level;
     }
@@ -15,7 +15,7 @@ public class DifficultyLevel : ValueObject
     }
 }
 
-public enum DificultyLevelEnum : short
+public enum DifficultyLevelEnum : short
 {
     Easy = 1,
     Medium = 2,
