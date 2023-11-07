@@ -1,6 +1,6 @@
-﻿using Master.Chef.Fiap.Application.AppServices;
+﻿using Microsoft.AspNetCore.Mvc;
+using Master.Chef.Fiap.Application.AppServices;
 using Master.Chef.Fiap.Application.Dtos.Recipes;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Master.Chef.Fiap.Api.Controllers;
 
@@ -26,20 +26,14 @@ public class RecipeController : MainController
         if (id == Guid.Empty)
             return BadRequest();
         
-        var result = await _appService.GetAllRecipesAsync();
+        var result = await _appService.GetRecipeByIdAsync(id);
         return Ok(result);
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateRecipe()
+    public async Task<IActionResult> CreateRecipe([FromBody] CreateRecipeDto dto)
     {
-        var result = new GetAllRecipesDto
-        {
-            Id = Guid.NewGuid(),
-            Title = "Recipe Title",
-            Description = "Recipe Description"
-        };
-     
-        return CreatedAtAction(nameof(GetRecipeById), new { id = result.Id } ,result);
+        var result = await _appService.CreateRecipeAsync(dto);
+        return CreatedAtAction(nameof(GetRecipeById), new { id = result } ,result);
     }
 }

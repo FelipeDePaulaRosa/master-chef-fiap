@@ -3,13 +3,13 @@
   <component name="EfCoreDialogsState">
     <option name="keyValueStorage">
       <map>
-        <entry key="Common:8159ee4c-6ba8-4c48-8772-389b3fe30e61:dbContext" value="Master.Chef.Fiap.Infrastructure.Contexts.MasterChefIdentityDbContext" />
+        <entry key="Common:8159ee4c-6ba8-4c48-8772-389b3fe30e61:dbContext" value="Master.Chef.Fiap.Infrastructure.Contexts.MasterChefApiDbContext" />
         <entry key="Common:buildConfiguration" value="Debug" />
         <entry key="Common:idempotent" value="false" />
         <entry key="Common:noBuild" value="false" />
         <entry key="Common:noTransactions" value="false" />
         <entry key="Common:outputFilePath" value="script.sql" />
-        <entry key="Common:outputFolder" value="Migrations" />
+        <entry key="Common:outputFolder" value="Migrations\Api" />
         <entry key="Common:useDefaultConnection" value="true" />
       </map>
     </option>

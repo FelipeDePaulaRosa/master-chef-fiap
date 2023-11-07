@@ -9,4 +9,10 @@ public class MasterChefIdentityDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.HasDefaultSchema("identity");
+        base.OnModelCreating(builder);
+    }
 }
