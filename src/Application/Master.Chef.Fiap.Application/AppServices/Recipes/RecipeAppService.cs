@@ -1,8 +1,9 @@
-﻿using Master.Chef.Fiap.Application.Services;
-using Master.Chef.Fiap.Application.Dtos.Recipes;
+﻿using Microsoft.EntityFrameworkCore;
+using Master.Chef.Fiap.Application.Services;
+using Master.Chef.Fiap.CrossCutting.Extensions;
 using Master.Chef.Fiap.Domain.Entities.Recipes;
+using Master.Chef.Fiap.Application.Dtos.Recipes;
 using Master.Chef.Fiap.Infrastructure.Repositories.Contracts;
-using Microsoft.EntityFrameworkCore;
 
 namespace Master.Chef.Fiap.Application.AppServices;
 
@@ -10,16 +11,22 @@ public class RecipeAppService : IRecipeAppService
 {
     private readonly IRecipeRepository _recipeRepository;
     private readonly IIdentityService _identityService;
+    private readonly IUserSession _userSession;
     
-    public RecipeAppService(IRecipeRepository recipeRepository, IIdentityService identityService)
+    public RecipeAppService(IRecipeRepository recipeRepository, IIdentityService identityService, IUserSession userSession)
     {
         _recipeRepository = recipeRepository;
         _identityService = identityService;
+        _userSession = userSession;
     }
     
     public async Task<IEnumerable<GetAllRecipesDto>> GetAllRecipesAsync()
     {
         var recipes = await _recipeRepository.GetAll();
+        
+        if (recipes is null || !recipes.Any())
+            return new List<GetAllRecipesDto>();
+        
         var idsOfUsers = recipes.Select(x => x.OwnerId.ToString()).Distinct();
         var users = await _identityService.GetIdentityUsersByIds(idsOfUsers);
         
@@ -62,5 +69,45 @@ public class RecipeAppService : IRecipeAppService
         var response = await _recipeRepository.Add(recipe);
 
         return response.Id;
+    }
+
+    public async Task DeleteRecipeAsync(Guid id)
+    {
+        var recipe = await _recipeRepository
+            .GetQueryable<Recipe>()
+            .Include(x => x.Ingredients)
+            .FirstOrDefaultAsync(x => x.Id.Equals(id));
+        
+        if(recipe is null)
+            throw new Exception("Recipe not found");
+        
+        await _recipeRepository.Delete(recipe);
+    }
+
+    public async Task UpdateRecipeAsync(Guid id, UpdateRecipeDto dto)
+    {
+        var recipe = await _recipeRepository
+            .GetQueryable<Recipe>()
+            .Include(x => x.Ingredients)
+            .FirstOrDefaultAsync(x => x.Id.Equals(id));
+
+        if(recipe is null)  
+            throw new Exception("Recipe not found");
+        
+        if (_userSession.UserId != recipe.OwnerId)
+            throw new Exception("You are not the owner of this recipe");
+
+        recipe.Update(dto.Title, dto.Description, dto.Summary, (DifficultyLevelEnum) dto.DifficultLevel);
+        
+        dto.Ingredients.ForEach(ingredientDto => recipe.UpdateIngredient(
+            ingredientDto.Id, 
+            ingredientDto.Name, 
+            ingredientDto.Quantity, 
+            ingredientDto.Unit)
+        );
+        
+        recipe.DeleteIngredients(dto.Ingredients.Select(x => x.Id));
+        
+        await _recipeRepository.Update(recipe);
     }
 }

@@ -22,4 +22,11 @@ public class Ingredient : Entity
         Quantity = quantity;
         Unit = unit;
     }
+    
+    public void Update(string name, double quantity, string unit)
+    {
+        Name = name;
+        Quantity = quantity;
+        Unit = unit;
+    }
 }
