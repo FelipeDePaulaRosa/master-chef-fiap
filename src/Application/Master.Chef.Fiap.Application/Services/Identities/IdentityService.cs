@@ -1,5 +1,6 @@
-﻿using Master.Chef.Fiap.Application.Dtos.Identities;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Master.Chef.Fiap.Application.Dtos.Identities;
 
 namespace Master.Chef.Fiap.Application.Services;
 
@@ -38,5 +39,19 @@ public class IdentityService : IIdentityService
             throw new Exception("Usuário não encontrado.");
         
         return user;
+    }
+
+    public async Task<List<IdentityUser>> GetIdentityUsersByIds(IEnumerable<string> ids)
+    {
+        return await _userManager
+            .Users
+            .AsNoTracking()
+            .Where(x => ids.Contains(x.Id))
+            .ToListAsync();
+    }
+
+    public async Task<IdentityUser> GetIdentityUserById(Guid id)
+    {
+        return await _userManager.FindByIdAsync(id.ToString());
     }
 }

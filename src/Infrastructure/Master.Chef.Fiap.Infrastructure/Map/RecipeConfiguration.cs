@@ -9,11 +9,13 @@ public class RecipeConfiguration : IEntityTypeConfiguration<Recipe>
     public void Configure(EntityTypeBuilder<Recipe> builder)
     {
         builder
-            .HasKey(x => x.Id);
+            .HasKey(x => x.Id)
+            .HasName("id");
 
         builder
             .Property(x => x.OwnerId)
-            .IsRequired();
+            .IsRequired()
+            .HasColumnName("owner_id");
         
         builder
             .Property(x => x.Title)
@@ -26,6 +28,12 @@ public class RecipeConfiguration : IEntityTypeConfiguration<Recipe>
             .IsRequired()
             .HasMaxLength(1000)
             .HasColumnName("description");
+        
+        builder
+            .Property(x => x.Summary)
+            .IsRequired()
+            .HasMaxLength(500)
+            .HasColumnName("summary");
         
         builder
             .OwnsOne(x => x.DifficultLevelEnum, difficulty =>
