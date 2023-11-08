@@ -8,4 +8,5 @@ public interface IRecipeAppService
     Task<GetRecipeDto> GetRecipeByIdAsync(Guid id);
     Task<Guid> CreateRecipeAsync(CreateRecipeDto dto);
     Task DeleteRecipeAsync(Guid id);
+    Task UpdateRecipeAsync(Guid id, UpdateRecipeDto dto);
 }

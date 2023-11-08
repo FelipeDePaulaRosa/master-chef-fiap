@@ -51,4 +51,15 @@ public class RecipeController : MainController
         await _appService.DeleteRecipeAsync(id);
         return Ok();
     }
+    
+    [HttpPut("{id}")]
+    [Authorize]
+    public async Task<IActionResult> UpdateRecipe(Guid id, [FromBody] UpdateRecipeDto dto)
+    {
+        if (id == Guid.Empty)
+            return BadRequest("Id cannot be empty.");
+        
+        await _appService.UpdateRecipeAsync(id, dto);
+        return Ok();
+    }   
 }
