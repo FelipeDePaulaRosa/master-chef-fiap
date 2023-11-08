@@ -20,6 +20,10 @@ public class RecipeAppService : IRecipeAppService
     public async Task<IEnumerable<GetAllRecipesDto>> GetAllRecipesAsync()
     {
         var recipes = await _recipeRepository.GetAll();
+        
+        if (recipes is null || !recipes.Any())
+            return new List<GetAllRecipesDto>();
+        
         var idsOfUsers = recipes.Select(x => x.OwnerId.ToString()).Distinct();
         var users = await _identityService.GetIdentityUsersByIds(idsOfUsers);
         
@@ -62,5 +66,18 @@ public class RecipeAppService : IRecipeAppService
         var response = await _recipeRepository.Add(recipe);
 
         return response.Id;
+    }
+
+    public async Task DeleteRecipeAsync(Guid id)
+    {
+        var recipe = await _recipeRepository
+            .GetQueryable<Recipe>()
+            .Include(x => x.Ingredients)
+            .FirstOrDefaultAsync(x => x.Id.Equals(id));
+        
+        if(recipe is null)
+            throw new Exception("Recipe not found");
+        
+        await _recipeRepository.Delete(recipe);
     }
 }
