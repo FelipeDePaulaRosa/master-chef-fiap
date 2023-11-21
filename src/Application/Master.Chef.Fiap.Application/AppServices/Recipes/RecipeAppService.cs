@@ -110,4 +110,26 @@ public class RecipeAppService : IRecipeAppService
         
         await _recipeRepository.Update(recipe);
     }
+
+    public async Task<IEnumerable<GetAllRecipesDto>> GetRecipesByOwnerIdAsync(Guid userId, string userName)
+    {
+        var recipes = await _recipeRepository
+            .GetQueryable<Recipe>()
+            .Where(x => x.OwnerId == userId)
+            .ToListAsync();
+                
+        if (recipes is null || !recipes.Any())
+            return new List<GetAllRecipesDto>();
+        
+        var recipesDtos = recipes.Select(recipe => new GetAllRecipesDto
+        {
+            Id = recipe.Id,
+            Title = recipe.Title,
+            Summary = recipe.Summary,
+            OwnerName = userName,
+            DifficultLevel = recipe.GetDifficultLevelId()
+        });
+        
+        return recipesDtos;
+    }
 }

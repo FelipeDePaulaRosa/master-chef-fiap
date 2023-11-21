@@ -9,4 +9,5 @@ public interface IRecipeAppService
     Task<Guid> CreateRecipeAsync(CreateRecipeDto dto);
     Task DeleteRecipeAsync(Guid id);
     Task UpdateRecipeAsync(Guid id, UpdateRecipeDto dto);
+    Task<IEnumerable<GetAllRecipesDto>> GetRecipesByOwnerIdAsync(Guid userSessionUserId, string userSessionUserName);
 }

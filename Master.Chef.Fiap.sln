@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Master.Chef.Fiap.Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Master.Chef.Fiap.CrossCutting", "src\Infrastructure\Master.Chef.Fiap.CrossCutting\Master.Chef.Fiap.CrossCutting.csproj", "{8D2A7508-9755-4829-A7BF-1C3878D2F21B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Master.Chef.Fiap.Web", "src\Api\Master.Chef.Fiap.Web\Master.Chef.Fiap.Web.csproj", "{3E8F6AA0-1CF3-47E0-AE12-6AC1674F9B30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{8D2A7508-9755-4829-A7BF-1C3878D2F21B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D2A7508-9755-4829-A7BF-1C3878D2F21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D2A7508-9755-4829-A7BF-1C3878D2F21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E8F6AA0-1CF3-47E0-AE12-6AC1674F9B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E8F6AA0-1CF3-47E0-AE12-6AC1674F9B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E8F6AA0-1CF3-47E0-AE12-6AC1674F9B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E8F6AA0-1CF3-47E0-AE12-6AC1674F9B30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8A7DAA96-437A-41DA-B26D-305B9AFFB8A8} = {2C74FE35-B70C-4B1A-B0A9-99E181E0BDC6}
@@ -63,5 +69,6 @@ Global
 		{ACABD83A-B0D7-4C8D-B635-D50044FED117} = {5AD6E403-3C33-4AA6-815A-0E9C05FF907A}
 		{8159EE4C-6BA8-4C48-8772-389B3FE30E61} = {8A176BC9-5993-4915-8249-E02CB3A98521}
 		{8D2A7508-9755-4829-A7BF-1C3878D2F21B} = {8A176BC9-5993-4915-8249-E02CB3A98521}
+		{3E8F6AA0-1CF3-47E0-AE12-6AC1674F9B30} = {8A7DAA96-437A-41DA-B26D-305B9AFFB8A8}
 	EndGlobalSection
 EndGlobal

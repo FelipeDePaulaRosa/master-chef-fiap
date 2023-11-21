@@ -23,6 +23,8 @@ public class AuthService : IAuthService
             throw new Exception("Usuário temporariamente bloqueado por tentativas inválidas.");
         else if(signInResult.IsNotAllowed)
             throw new Exception("Usuário ou senha incorretos.");
+        else if(signInResult.Succeeded is false)
+            throw new Exception("Usuário ou senha incorretos.");
     }
 
     public TokenDto GenerateToken(IdentityUser identityUser)

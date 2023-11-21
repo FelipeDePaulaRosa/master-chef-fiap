@@ -1,0 +1,23 @@
+﻿@page
+@model Master.Chef.Fiap.Web.Pages.Recipes.RecipeDetails
+
+@{
+    ViewData["Title"] = "Visualização da receita";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1>@Model.Recipe.Title</h1>
+    <p>@Model.Recipe.Description</p>
+    <p><strong>Criado por:</strong> @Model.Recipe.OwnerName</p>
+    <p><strong>Dificuldade:</strong> @Model.Recipe.DifficultLevel</p>
+
+    <h4>Ingredientes</h4>
+    <ul>
+        @foreach (var ingredient in Model.Recipe.Ingredients)
+        {
+            <li>@ingredient.Name - @ingredient.Quantity @ingredient.Unit</li>
+        }
+    </ul>
+    <!-- Add other details as needed -->
+</div>

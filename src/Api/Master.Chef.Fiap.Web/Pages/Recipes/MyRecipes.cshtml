@@ -1,0 +1,28 @@
+﻿@page
+@model Master.Chef.Fiap.Web.Pages.Recipes.MyRecipes
+
+@{
+    ViewData["Title"] = "Minhas receitas";
+    Layout = "~/Pages/Shared/_Layout.cshtml"; // Your layout file
+}
+
+<div class="container">
+    <h1>Minhas receitas</h1>
+    <div class="row">
+        @foreach (var recipe in Model.Recipes)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <!-- Sample image, replace with your own -->
+                    <img src="~/chef-icon.png" class="card-img-top" alt="Recipe Image">
+    
+                    <div class="card-body">
+                        <h5 class="card-title">@recipe.Title</h5>
+                        <p class="card-text">@recipe.Summary</p>
+                        <a href="./RecipeDetails?id=@recipe.Id" class="btn btn-primary">Visualizar</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

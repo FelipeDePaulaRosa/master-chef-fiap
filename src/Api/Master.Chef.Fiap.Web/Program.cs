@@ -1,22 +1,23 @@
 using System.Text;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Master.Chef.Fiap.Application.Services;
-using Master.Chef.Fiap.CrossCutting.Extensions;
-using Master.Chef.Fiap.Infrastructure.Contexts;
 using Master.Chef.Fiap.Application.AppServices;
-using Master.Chef.Fiap.Application.Services.Auths;
 using Master.Chef.Fiap.Application.AppServices.Auths;
 using Master.Chef.Fiap.Application.AppServices.Identities;
+using Master.Chef.Fiap.Application.Services;
+using Master.Chef.Fiap.Application.Services.Auths;
 using Master.Chef.Fiap.CrossCutting.Configurations;
-using Master.Chef.Fiap.Domain.Entities.Recipes;
+using Master.Chef.Fiap.CrossCutting.Extensions;
+using Master.Chef.Fiap.Infrastructure.Contexts;
 using Master.Chef.Fiap.Infrastructure.Repositories;
 using Master.Chef.Fiap.Infrastructure.Repositories.Contracts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddRazorPages();
 
 IConfiguration configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -88,7 +89,7 @@ builder.Services.AddControllers();
 
 #region Dependency Injection
 builder.Services.AddTransient<MasterChefApiDbContext>();
-builder.Services.AddTransient<IUserSession, UserSession>();
+builder.Services.AddSingleton<IUserSession, UserSession>();
 
 builder.Services.AddScoped<IIdentityService, IdentityService>();
 builder.Services.AddScoped<IRecipeRepository, RecipeRepository>();
@@ -99,55 +100,24 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IAuthAppService, AuthAppService>();
 #endregion
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(opt =>
-{
-    //TODO: Fix Swagger JWT Authentication
-    opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Description = "Insira o token JWT: Bearer {seu token}",
-        Name = "Authorization",
-        In = ParameterLocation.Header,
-        Type = SecuritySchemeType.ApiKey,
-        // Scheme = "Bearer"
-    });
-
-    opt.AddSecurityRequirement(new OpenApiSecurityRequirement()
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                },
-                // Scheme = "oauth2",
-                // Name = "Bearer",
-                // In = ParameterLocation.Header,
-
-            },
-            Array.Empty<string>()
-        }
-    });
-});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (!app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseExceptionHandler("/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
-app.UseAuthentication();
+app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapRazorPages();
 
 app.Run();
